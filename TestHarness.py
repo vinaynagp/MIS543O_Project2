@@ -151,10 +151,10 @@ class Forwarder(object):
 		self.in_queue = []
 		self.out_queue = []
 
-		receiver = subprocess.Popen(["python", self.receiver_path,
+		receiver = subprocess.Popen(["python3", self.receiver_path,
 									 "-p", str(self.receiver_port)])
 		time.sleep(0.2) # make sure the receiver is started first
-		sender = subprocess.Popen(["python", self.sender_path,
+		sender = subprocess.Popen(["python3", self.sender_path,
 								   "-f", input_file,
 								   "-p", str(self.port)])
 		try:
